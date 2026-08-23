@@ -1,0 +1,74 @@
+project:
+  seed: 42
+  data_path: dataset/hdb_resale_2022_2025_cleaned.csv
+  artifacts_dir: artifacts_smoke
+  reports_dir: reports_smoke
+
+data:
+  target: resale_price
+  split_column: split_group
+  train_label: TRAIN
+  validation_label: VALIDATION
+  test_label: TEST
+  numeric_features: [floor_area_sqm, storey_mid, remaining_lease_months, relative_floor, time_index, max_floor_lvl, total_dwelling_units, month_sin, month_cos]
+  categorical_features: [town, flat_type, flat_model]
+  binary_features: [commercial_flag, market_hawker_flag, multistorey_carpark_flag, precinct_pavilion_flag]
+  leakage_columns: [price_per_sqm, record_id, address_key, split_group, price_outlier_flag, possible_duplicate_group_size]
+
+ridge:
+  alphas: [1.0, 10.0]
+
+xgboost:
+  device: auto
+  tune_trials: 2
+  n_estimators: 100
+  early_stopping_rounds: 10
+  learning_rates: [0.05]
+  max_depths: [4, 6]
+  min_child_weights: [1]
+  subsamples: [0.85]
+  colsample_bytrees: [0.85]
+  reg_alphas: [0.0]
+  reg_lambdas: [1.0]
+
+hybrid:
+  high_cardinality_features: [address_key, street_name, block]
+  smoothing:
+    address_key: 10.0
+    street_name: 30.0
+    block: 30.0
+  oof_folds: 2
+  n_estimators: 50
+  early_stopping_rounds: 10
+  learning_rate: 0.05
+  max_depth: 4
+  min_child_weight: 1
+  subsample: 0.85
+  colsample_bytree: 0.85
+  reg_alpha: 0.0
+  reg_lambda: 1.0
+
+flow:
+  device: auto
+  hidden_dims: [32, 32]
+  time_embedding_dim: 8
+  dropout: 0.0
+  batch_size: 2048
+  num_workers: 0
+  max_epochs: 2
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  gradient_clip: 1.0
+  early_stopping_patience: 2
+  lr_patience: 1
+  lr_factor: 0.5
+  min_learning_rate: 0.000001
+  ema_decay: 0.99
+  amp: true
+  sampling_steps: 4
+  validation_samples: 8
+  test_samples: 8
+  prediction_batch_rows: 2048
+
+evaluation:
+  interval_alpha: 0.2
