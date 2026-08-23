@@ -1,0 +1,3 @@
+transaction_month_num,time_index,town,flat_type,storey_mid,floor_area_sqm,flat_model,remaining_lease_months,max_floor_lvl,total_dwelling_units,commercial_flag,market_hawker_flag,multistorey_carpark_flag,precinct_pavilion_flag,relative_floor
+1,48,ANG MO KIO,3 ROOM,11,74,NEW GENERATION,617,12,153,0,0,0,0,0.9167
+1,48,TAMPINES,4 ROOM,8,93,MODEL A,900,15,120,0,0,1,0,0.5333
