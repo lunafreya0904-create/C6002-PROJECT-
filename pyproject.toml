@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ca6002-hdb-price"
+version = "0.1.0"
+description = "HDB resale price baselines and Conditional Flow Matching"
+requires-python = ">=3.12,<3.13"
+
+[tool.setuptools]
+package-dir = {"" = "model"}
+
+[tool.setuptools.packages.find]
+where = ["model"]
+
+[tool.pytest.ini_options]
+pythonpath = ["model"]
+testpaths = ["tests"]
+addopts = "-q"

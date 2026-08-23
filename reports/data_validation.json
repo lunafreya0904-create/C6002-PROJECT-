@@ -1,0 +1,12 @@
+{
+  "rows": 95935,
+  "columns": 33,
+  "missing_predictor_values": 0,
+  "split_counts": {
+    "TRAIN": 47911,
+    "VALIDATION": 25250,
+    "TEST": 22774
+  },
+  "target_min": 150000.0,
+  "target_max": 1658888.0
+}
