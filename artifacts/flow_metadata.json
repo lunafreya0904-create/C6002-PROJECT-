@@ -1,0 +1,21 @@
+{
+  "device": "cuda",
+  "amp_enabled": true,
+  "epochs_completed": 28,
+  "best_epoch": 8,
+  "best_validation_loss": 1.783655693375238,
+  "training_seconds": 51.95024609565735,
+  "model_kwargs": {
+    "condition_dim": 65,
+    "hidden_dims": [
+      256,
+      256,
+      128
+    ],
+    "time_embedding_dim": 32,
+    "dropout": 0.05
+  },
+  "parameter_count": 125441,
+  "residual_mean": -0.00029515122139151857,
+  "residual_std": 0.16773941032756398
+}

@@ -1,0 +1,14 @@
+{
+  "architecture": "ridge_trend_plus_xgboost_residual",
+  "best_iteration": 3832,
+  "condition_dimensions": 65,
+  "location_features": [
+    "location__address_key_residual_te",
+    "location__address_key_log_count",
+    "location__street_name_residual_te",
+    "location__street_name_log_count",
+    "location__block_residual_te",
+    "location__block_log_count"
+  ],
+  "oof_folds": 5
+}
