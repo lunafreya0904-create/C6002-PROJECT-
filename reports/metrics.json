@@ -1,0 +1,37 @@
+{
+  "point_metrics": {
+    "training_median": {
+      "mae": 163029.52815798717,
+      "rmse": 223349.03322575212,
+      "r2": -0.3640756784175281
+    },
+    "ridge": {
+      "mae": 45383.45299277685,
+      "rmse": 63435.19475115496,
+      "r2": 0.8899649952260842
+    },
+    "xgboost": {
+      "mae": 69955.01256841683,
+      "rmse": 85757.8759146042,
+      "r2": 0.7988970955499063
+    },
+    "ridge_xgboost_residual_hybrid": {
+      "mae": 28876.447253007816,
+      "rmse": 43255.76530478911,
+      "r2": 0.9488367278553266
+    },
+    "conditional_flow_matching_median": {
+      "mae": 28821.47791434311,
+      "rmse": 43904.21162032157,
+      "r2": 0.947291254773686
+    }
+  },
+  "probabilistic_metrics": {
+    "conditional_flow_matching": {
+      "crps": 21168.85909074328,
+      "raw_80_percent_interval_coverage": 0.7402739966628612,
+      "conformal_80_percent_interval_coverage": 0.7802757530517257,
+      "validation_median_log_correction": 0.014744415643929365
+    }
+  }
+}
